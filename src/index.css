@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+
+  .dark body {
+    @apply bg-dark text-dark;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-900 hover:bg-gray-200;
+  }
+
+  .dark .btn-secondary {
+    @apply bg-dark-surface text-dark hover:border-dark;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent bg-white text-gray-900;
+  }
+
+  .dark .input-field {
+    @apply border-dark focus:ring-purple-600 bg-dark-surface text-dark;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-sm;
+  }
+
+  .dark .card {
+    @apply bg-dark-surface;
+  }
+
+  .animate-like {
+    animation: likeEffect 0.45s ease-in-out;
+  }
+
+  .story-ring {
+    @apply bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600;
+  }
+}
+
+@keyframes likeEffect {
+  0% {
+    transform: scale(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
